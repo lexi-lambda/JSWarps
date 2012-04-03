@@ -1,0 +1,24 @@
+# The number of warps available by default to each player.
+maxwarps:
+  default: 2
+  worlds:
+    creative: 5
+  permissions:
+    owner: 20
+
+# The number of warp slots available for unlocking in addition to the default warps.
+warpslots:
+  default: 3
+  worlds:
+    foo: 7
+  permissions:
+    op: 20
+
+# The price it costs for each slot.
+slots:
+  baseprice: 100
+  use-multiplication: true
+  scalefactor: 2
+
+# Whether or not to use an economy plugin. This requires Vault to use.
+use-economy: false

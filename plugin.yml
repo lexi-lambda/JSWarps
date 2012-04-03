@@ -1,0 +1,63 @@
+name: JSWarps
+main: com.imjake9.server.warps.JSWarps
+description: Warping and /home plugin.
+version: 1.2
+author: imjake9
+softdepend: [Vault]
+
+commands:
+  home:
+    description: Go to your home point.
+    usage: /<command>
+    permission: jswarps.home
+  sethome:
+    description: Set your home point.
+    usage: /<command>
+    permission: jswarps.home
+  privatewarp:
+    description: Use private warp commands.
+    usage: /<command> [subcommand] [parameters]
+    aliases: [pw, bw, jw]
+    permission: jswarps.private
+  publicwarp:
+    description: Use public warp commands.
+    usage: /<command> [subcommand] [parameters]
+    aliases: [warp, w]
+    permission: jswarps.public
+
+permissions:
+  jswarps.home:
+    default: true
+  jswarps.warp:
+    children:
+      jswarps.publicwarp: true
+      jswarps.privatewarp: true
+  jswarps.publicwarp:
+    default: op
+  jswarps.privatewarp:
+    default: op
+  jswarps.admin:
+    default: false
+  # BBB Aliases
+  bbbwarps.home:
+    children:
+      jswarps.home: true
+  bbbwarps.warp:
+    children:
+      jswarps.warp: true
+  bbbwarps.public:
+    children:
+      jswarps.publicwarp: true
+  bbbwarps.private:
+    children:
+      jswarps.privatewarp: true
+  bbbwarps.admin:
+    children:
+      jswarps.admin: true
+  # Legacy Aliases
+  jswarps.public:
+    children:
+      jwarps.publicwarps: true
+  jswarps.private:
+    children:
+      jswarps.privatewarps: true

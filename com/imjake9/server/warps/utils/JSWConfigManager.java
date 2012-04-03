@@ -97,6 +97,7 @@ public class JSWConfigManager {
         
         File f = new File(JSWarps.getPlugin().getDataFolder(), "players" + File.separator + player + ".yml");
         if (!f.exists()) try {
+            if (!f.getParentFile().exists()) f.getParentFile().mkdirs();
             f.createNewFile();
         } catch (IOException ex) {
             JSWarps.getPlugin().getMessager().severe("Couldn't create data folder for player '" + player + "'.");

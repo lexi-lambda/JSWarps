@@ -120,7 +120,7 @@ public class JSWarpsManager {
         
          try {
             // Get the file for the player
-            File f = new File(JSWarps.getPlugin().getDataFolder(), "warps" + File.separator + name + ".txt");
+            File f = new File(JSWarps.getPlugin().getDataFolder().getPath() + File.separator + "warps" + File.separator + name + ".txt");
             if (!f.getParentFile().exists()) f.getParentFile().mkdirs();
             if (!f.exists()) f.createNewFile();
             

@@ -62,7 +62,7 @@ public class JSWConfigManager {
         }
         
         // Set up public warp data
-        File pub = new File(dataFolder, "warps" + File.separator + "public.txt");
+        File pub = new File(dataFolder.getPath() + "warps" + File.separator + "public.txt");
         if(!pub.exists()) {
             try {
                 pub.createNewFile();
@@ -95,7 +95,7 @@ public class JSWConfigManager {
         player = player.toLowerCase();
         currentPlayer = player;
         
-        File f = new File(JSWarps.getPlugin().getDataFolder(), "players" + File.separator + player + ".yml");
+        File f = new File(JSWarps.getPlugin().getDataFolder().getPath() + File.separator + "players" + File.separator + player + ".yml");
         if (!f.exists()) try {
             if (!f.getParentFile().exists()) f.getParentFile().mkdirs();
             f.createNewFile();
@@ -128,7 +128,7 @@ public class JSWConfigManager {
      */
     public static void savePlayerData(String player, FileConfiguration config) {
         player = player.toLowerCase();
-        File f = new File(JSWarps.getPlugin().getDataFolder(), "players" + File.separator + player + ".yml");
+        File f = new File(JSWarps.getPlugin().getDataFolder().getPath() + File.separator + "players" + File.separator + player + ".yml");
         try {
             config.save(f);
         } catch (IOException ex) {

@@ -62,7 +62,7 @@ public class JSWConfigManager {
         }
         
         // Set up public warp data
-        File pub = new File(dataFolder.getPath() + "warps" + File.separator + "public.txt");
+        File pub = new File(dataFolder.getPath() + File.separator + "warps" + File.separator + "public.txt");
         if(!pub.exists()) {
             try {
                 pub.createNewFile();

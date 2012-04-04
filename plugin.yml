@@ -1,8 +1,9 @@
 name: JSWarps
 main: com.imjake9.server.warps.JSWarps
 description: Warping and /home plugin.
-version: 1.2.2
+version: 1.2.4
 author: imjake9
+depend: [JSLib]
 softdepend: [Vault]
 
 commands:

@@ -311,7 +311,7 @@ public class JSWarpsCommandHandler implements CommandExecutor {
                 if (args.length == 0) {
                     player.sendMessage(ChatColor.AQUA + "- - - - JSWarps - - - -");
                     player.sendMessage("  Use /w list to view your warps.");
-                    if (JSWarps.getPlugin().getPermissionsManager().hasPermission(sender, "admin")) {
+                    if (JSWarps.getPermissionsManager().hasPermission(sender, "admin")) {
                         player.sendMessage("  Use /w set <name> to create a new warp.");
                         player.sendMessage("  Use /w remove <name> to remove a warp.");
                     }
@@ -337,7 +337,7 @@ public class JSWarpsCommandHandler implements CommandExecutor {
                 
                 // SET
                 if (subcommand.equalsIgnoreCase("set")) {
-                    if (!JSWarps.getPlugin().getPermissionsManager().hasPermission(sender, "admin")) {
+                    if (!JSWarps.getPermissionsManager().hasPermission(sender, "admin")) {
                         Messaging.send(JSMessage.LACKS_PERMISSION, sender, "jswarps.admin");
                     }
                     
@@ -378,7 +378,7 @@ public class JSWarpsCommandHandler implements CommandExecutor {
                 
                 // REMOVE
                 if (subcommand.equalsIgnoreCase("remove")) {
-                    if (!JSWarps.getPlugin().getPermissionsManager().hasPermission(sender, "admin")) {
+                    if (!JSWarps.getPermissionsManager().hasPermission(sender, "admin")) {
                         Messaging.send(JSMessage.LACKS_PERMISSION, sender, "jswarps.admin");
                     }
                     
@@ -449,11 +449,11 @@ public class JSWarpsCommandHandler implements CommandExecutor {
         }
         
         public String getPermission() {
-            return JSWarps.getPlugin().getPermissionsManager().getPermission(name().toLowerCase());
+            return JSWarps.getPermissionsManager().getPermission(name().toLowerCase());
         }
         
         public boolean hasPermission(CommandSender sender) {
-            return JSWarps.getPlugin().getPermissionsManager().hasPermission(sender, name().toLowerCase());
+            return JSWarps.getPermissionsManager().hasPermission(sender, name().toLowerCase());
         }
         
         public String getPermissionMessage() {
@@ -465,7 +465,7 @@ public class JSWarpsCommandHandler implements CommandExecutor {
         }
         
         public boolean hasSubPermission(CommandSender sender, String node) {
-            return JSWarps.getPlugin().getPermissionsManager().hasPermission(sender, name().toLowerCase() + "." + node);
+            return JSWarps.getPermissionsManager().hasPermission(sender, name().toLowerCase() + "." + node);
         }
         
         public abstract boolean handle(CommandSender sender, String... args);

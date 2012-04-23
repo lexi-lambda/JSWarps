@@ -38,7 +38,7 @@ public class JSWConfigManager {
                 out.close();
                 in.close();
             } catch (IOException ex) {
-                JSWarps.getMessager().severe("Error creating default config file.");
+                JSWarps.getPlugin().getMessager().severe("Error creating default config file.");
                 ex.printStackTrace();
             }
         }
@@ -56,7 +56,7 @@ public class JSWConfigManager {
             try {
                 homes.createNewFile();
             } catch (IOException ex) {
-                JSWarps.getMessager().severe("Could not create homes file.");
+                JSWarps.getPlugin().getMessager().severe("Could not create homes file.");
                 ex.printStackTrace();
             }
         }
@@ -67,7 +67,7 @@ public class JSWConfigManager {
             try {
                 pub.createNewFile();
             } catch (IOException ex) {
-                JSWarps.getMessager().severe("Could not create public warp file.");
+                JSWarps.getPlugin().getMessager().severe("Could not create public warp file.");
                 ex.printStackTrace();
             }
         }
@@ -100,7 +100,7 @@ public class JSWConfigManager {
             if (!f.getParentFile().exists()) f.getParentFile().mkdirs();
             f.createNewFile();
         } catch (IOException ex) {
-            JSWarps.getMessager().severe("Couldn't create data folder for player '" + player + "'.");
+            JSWarps.getPlugin().getMessager().severe("Couldn't create data folder for player '" + player + "'.");
             ex.printStackTrace();
         }
         YamlConfiguration config = YamlConfiguration.loadConfiguration(f);
@@ -132,7 +132,7 @@ public class JSWConfigManager {
         try {
             config.save(f);
         } catch (IOException ex) {
-            JSWarps.getMessager().severe("Couldn't save data folder for player '" + player + "'.");
+            JSWarps.getPlugin().getMessager().severe("Couldn't save data folder for player '" + player + "'.");
             ex.printStackTrace();
         }
     }

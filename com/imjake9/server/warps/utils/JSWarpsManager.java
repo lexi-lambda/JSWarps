@@ -47,7 +47,7 @@ public class JSWarpsManager {
                 warps.put(key, warpList);
                 
             } catch (FileNotFoundException ex) {
-                JSWarps.getMessager().warning("Could not load existing warp file for " + key + ".");
+                JSWarps.getPlugin().getMessager().warning("Could not load existing warp file for " + key + ".");
             }
         }
         
